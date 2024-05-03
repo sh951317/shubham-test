@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Check Jenkins Version') {
+            steps {
+                script {
+                    def jenkinsVersion = Jenkins.instance.getVersion().toString()
+                    echo "Jenkins version: ${jenkinsVersion}"
+                }
+            }
+        }
+    }
+}
